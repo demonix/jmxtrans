@@ -198,6 +198,11 @@ class HostSets(object):
             else:
                 set_entry['urlTemplate'] = None
 
+            if 'cronExpression' in host_set:
+                set_entry['cronExpression'] = host_set['cronExpression']
+            else:
+                set_entry['cronExpression'] = None
+
             self.host_sets[host_set['setname']] = set_entry
 
     def set_names(self):
